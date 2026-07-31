@@ -11,15 +11,16 @@
 @use 'mixins/reduce-motion' as rm;
 @use 'mixins/fonts' as font-mixins;
 @use 'mixins/scrollbar';
+@use 'selectors';
 
-:root {
+#{selectors.$root} {
   --ix-safe-area-inset-top: 0rem;
   --ix-safe-area-inset-right: 0rem;
   --ix-safe-area-inset-bottom: 0rem;
   --ix-safe-area-inset-left: 0rem;
 }
 
-[data-ix-theme] {
+#{selectors.$theme} {
   --animate-duration: var(--theme-default-time);
   --theme-font-family: Siemens Sans, system-ui, -apple-system, 'Segoe UI',
     Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif,
@@ -33,13 +34,15 @@
   @include rm.reduce-motion;
 }
 
-body {
+#{selectors.$body} {
   color: var(--theme-color-std-text);
   background-color: var(--theme-color-1);
   margin: 0;
   @include font-mixins.typography-body;
 }
 
-body:not(.disable-scrollbar) {
-  @include scrollbar.scrollbar;
+#{selectors.$body}:not(.disable-scrollbar) {
+  @include scrollbar.scrollbar(
+    $include-current: selectors.$include-current-body-scrollbar
+  );
 }

@@ -10,6 +10,7 @@
 // styles targeting irrelevant browsers while applying new styles.
 //
 // Bootstrap is licensed MIT. https://github.com/twbs/bootstrap (Commit: 6f87fce7962bef83c59eff895d891016db620cd7)
+@use '../selectors';
 
 *,
 *::before,
@@ -17,7 +18,7 @@
   box-sizing: border-box;
 }
 
-:root {
+#{selectors.$root} {
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }

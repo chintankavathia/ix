@@ -111,6 +111,11 @@ function copyDistCssToDist() {
     ...compileCore('ix-standalone.scss', 'siemens-ix-standalone.css'),
   ];
 
+  cssFiles = [
+    ...cssFiles,
+    ...compileCore('ix-shadow-dom.scss', 'siemens-ix-shadow-dom.css'),
+  ];
+
   const optimizedCss = await Promise.all(
     cssFiles.map(async (result) => {
       const { path, css } = result;

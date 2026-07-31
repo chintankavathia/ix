@@ -1,0 +1,16 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Siemens AG
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+@use 'selectors' with (
+  $root: ':host',
+  $document: ':host',
+  $body: '[data-ix-theme]',
+  $include-current-body-scrollbar: true
+);
+@use 'misc/shadow-dom-reset';
+@use './ix';

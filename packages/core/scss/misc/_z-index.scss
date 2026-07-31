@@ -6,8 +6,9 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+@use '../selectors';
 
-:root {
+#{selectors.$root} {
   --theme-z-index-sticky: 1020;
   --theme-z-index-fixed: 1030;
   --theme-z-index-modal-backdrop: 1040;
